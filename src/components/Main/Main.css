@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main__background-img {
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('../../images/main-theme.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+@media all and (max-width: 600px) {
+  .main__background-img {
+    padding-top: 56px;
+  }
+}

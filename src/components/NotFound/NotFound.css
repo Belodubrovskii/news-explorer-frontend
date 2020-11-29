@@ -1,0 +1,49 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #F5F6F7;
+  padding: 80px 7%;
+  box-sizing: border-box;
+}
+
+.not-found__image {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 24px;
+  background-image: url('../../images/not-found.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.not-found__title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.not-found__text {
+  max-width: 340px;
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  text-align: center;
+}
+
+@media all and (max-width: 600px) {
+  .not-found {
+    padding: 40px 16px;
+  }
+}
