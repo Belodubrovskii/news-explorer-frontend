@@ -1,6 +1,5 @@
 import './NewsCard.css';
 import React from 'react';
-import CardTextField from '../CardTextField/CardTextField';
 
 function NewsCard(props) {
 
