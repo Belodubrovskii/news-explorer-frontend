@@ -1,17 +1,17 @@
 import React from 'react';
-import Popup from '../Popup/Popup.js';
-import './Register.css';
+import Popup from '../Popup/Popup';
+import './Login.css';
 
-function Register (props) {
+function Login({ isOpen, onClose, changePopup }) {
   return (
     <Popup
-      isOpen={props.isOpen}
-      value="Зарегистрироваться"
-      linkTo="Войти"
-      title="Регистрация"
-      hasForm={true}
-      onClose={props.onClose}
-      changePopup={props.changePopup}
+      isOpen={isOpen}
+      value="Войти"
+      linkTo="Зарегистрироваться"
+      title="Вход"
+      hasForm
+      onClose={onClose}
+      changePopup={changePopup}
     >
       <label className="popup__label">Email</label>
       <input
@@ -28,18 +28,10 @@ function Register (props) {
         placeholder="Введите пароль"
         required
       />
-      <span className="popup__error popup__error_visible"></span>
-      <label className="popup__label">Имя</label>
-      <input
-        className="popup__input"
-        type="text"
-        placeholder="Введите своё имя"
-        required
-      />
-      <span className="popup__error popup__error_visible">Some error</span>
+      <span className="popup__error popup__error_visible" />
       <span className="popup__error popup__error_visible popup__error_general">Такой пользователь уже есть</span>
     </Popup>
   );
 }
 
-export default Register;
+export default Login;

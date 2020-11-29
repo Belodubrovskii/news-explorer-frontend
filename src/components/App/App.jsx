@@ -1,41 +1,41 @@
 import './App.css';
 import React from 'react';
-import Footer from '../Footer/Footer.js';
-import Main from '../Main/Main.js';
-import Register from '../Register/Register.js';
-import Login from '../Login/Login.js';
-import Popup from '../Popup/Popup.js';
-import SavedNews from '../SavedNews/SavedNews.js';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import Main from '../Main/Main';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+import Popup from '../Popup/Popup';
+import SavedNews from '../SavedNews/SavedNews';
 
 function App() {
-
+  // eslint-disable-next-line no-unused-vars
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [currentUser, setCurrentUser] = React.useState({name: 'Грета'});
+  // eslint-disable-next-line no-unused-vars
+  const [currentUser, setCurrentUser] = React.useState({ name: 'Грета' });
   const [registerPopupOpen, setRegisterPopupOpen] = React.useState(false);
   const [loginPopupOpen, setLoginPopupOpen] = React.useState(false);
   const [messagePopupOpen, setMessagePopupOpen] = React.useState(false);
 
-  function handleRegisterClick () {
+  function handleRegisterClick() {
     setRegisterPopupOpen(true);
     setLoginPopupOpen(false);
   }
 
-  function handleLoginClick () {
+  function handleLoginClick() {
     setLoginPopupOpen(true);
     setRegisterPopupOpen(false);
     setMessagePopupOpen(false);
   }
 
-  function closeAllPopups () {
+  function closeAllPopups() {
     setRegisterPopupOpen(false);
     setLoginPopupOpen(false);
     setMessagePopupOpen(false);
   }
 
   React.useEffect(() => {
-
-    function closePopup (evt) {
+    function closePopup(evt) {
       if (evt.target.classList.contains('popup_opened')) {
         closeAllPopups();
       }
@@ -47,22 +47,24 @@ function App() {
 
     document.addEventListener('click', closePopup);
     document.addEventListener('keydown', closePopup);
-
-  },[]);
-
+  }, []);
 
   return (
     <div className="page">
       <Switch>
         <Route exact path="/">
-          <Main name={currentUser.name} loggedIn={loggedIn} onRegister={handleRegisterClick}/>
+          <Main name={currentUser.name} loggedIn={loggedIn} onRegister={handleRegisterClick} />
         </Route>
         <Route path="/saved-news">
-          <SavedNews name={currentUser.name} loggedIn={loggedIn} isBlackText={true} />
+          <SavedNews name={currentUser.name} />
         </Route>
       </Switch>
-      <Register isOpen={registerPopupOpen} onClose={closeAllPopups} changePopup={handleLoginClick}/>
-      <Login isOpen={loginPopupOpen} onClose={closeAllPopups} changePopup={handleRegisterClick}/>
+      <Register
+        isOpen={registerPopupOpen}
+        onClose={closeAllPopups}
+        changePopup={handleLoginClick}
+      />
+      <Login isOpen={loginPopupOpen} onClose={closeAllPopups} changePopup={handleRegisterClick} />
       <Popup
         isOpen={messagePopupOpen}
         onClose={closeAllPopups}

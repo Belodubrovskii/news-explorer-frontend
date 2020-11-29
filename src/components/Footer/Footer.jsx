@@ -20,12 +20,12 @@ function Footer() {
         <ul className="footer__list footer__list_social">
           <li className="footer__list-item">
             <a href="https://github.com/Belodubrovskii" className="footer__social-link">
-              <img src={github} alt="github logo" className="footer__icon"/>
+              <img src={github} alt="github logo" className="footer__icon" />
             </a>
           </li>
           <li className="footer__list-item">
             <a href="https://vk.com/id21256290" className="footer__social-link">
-              <img src={facebook} alt="facebook logo" className="footer__icon"/>
+              <img src={facebook} alt="facebook logo" className="footer__icon" />
             </a>
           </li>
         </ul>
