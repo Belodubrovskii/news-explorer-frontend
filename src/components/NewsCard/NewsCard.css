@@ -1,0 +1,216 @@
+.card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 16px;
+}
+
+.card__container {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  width: 100%;
+  padding: 24px;
+  z-index: 1;
+}
+
+.card__image {
+  object-fit: cover;
+  height: 272px;
+  border-radius: 16px 16px 0 0;
+}
+
+.card__link {
+  text-decoration: none;
+  padding: 24px;
+}
+
+.card__date {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  margin: 0 0 12px;
+}
+
+.card__title {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  margin: 0 0 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card__content {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1A1B22;
+  margin: 0 0 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.card__source {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #B6BCBF;
+  margin: 0;
+}
+
+.card__tooltip-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+
+.card__button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: initial;
+}
+
+.card__button:hover + .tooltip {
+  display: flex;
+}
+
+.card__save-icon {
+  background-image: url('../../images/save.svg');
+}
+
+.card__save-icon:hover {
+  background-image: url('../../images/save-hover.svg');
+}
+
+.card__save-icon_marked {
+  background-image: url('../../images/save-marked.svg');
+}
+
+.card__trash-icon {
+  background-image: url('../../images/trash.svg');
+}
+
+.card__trash-icon:hover {
+  background-image: url('../../images/trash-hover.svg');
+}
+
+.card__field {
+  display: flex;
+  height: 40px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 12px;
+  margin-right: 5px;
+}
+
+.card__field-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.tooltip {
+  display: none;
+}
+
+.tooltip .card__field-text {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.category {
+  max-width: 110px;
+}
+
+@media all and (max-width: 1000px) {
+  .card {
+    width: 224px;
+  }
+
+  .card__container {
+    padding: 8px;
+  }
+
+  .card__image {
+    height: 150px;
+  }
+
+  .card__link {
+    padding: 16px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 10px;
+  }
+
+  .card__content {
+    margin: 0 0 12px;
+  }
+
+  .card__button:hover + .tooltip {
+    display: none;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .card {
+    width: 288px;
+  }
+
+  .card__container {
+    padding: 16px;
+  }
+
+  .card__image {
+    height: 196px;
+  }
+
+  .card__title {
+    line-height: 26px;
+  }
+
+  .card__content {
+    margin: 0 0 8px;
+  }
+}

@@ -1,0 +1,5 @@
+@media all and (max-width: 600px) {
+  .saved-news {
+    padding-top: 56px;
+  }
+}

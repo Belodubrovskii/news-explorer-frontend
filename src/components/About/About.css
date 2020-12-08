@@ -1,0 +1,82 @@
+.about {
+  display: flex;
+  width: 100%;
+  padding: 80px 7%;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+
+.about__avatar {
+  width: 465px;
+  height: 465px;
+  min-width: 465px;
+  border-radius: 50%;
+  background: center / cover no-repeat url('../../images/avatar.jpg');
+  margin-right: 56px;
+}
+
+.about__info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.about__title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 50px 0 24px;
+}
+
+.about__info {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  margin: 0 0 20px;
+  max-width: 600px;
+}
+
+@media all and (max-width: 1000px) {
+  .about {
+    padding: 40px 4%;
+    min-height: 350px;
+  }
+
+  .about__avatar {
+    width: 230px;
+    height: 230px;
+    min-width: 230px;
+    margin-right: 32px;
+    align-self: center;
+  }
+
+  .about__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 16px;
+  }
+
+  .about__info {
+    max-width: 500px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .about {
+    padding: 32px 16px 80px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__avatar {
+    width: 270px;
+    height: 270px;
+    margin: 0 0 24px;
+  }
+}
