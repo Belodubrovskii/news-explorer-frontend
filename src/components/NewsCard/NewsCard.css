@@ -1,10 +1,10 @@
 .card {
-  width: 400px;
   display: flex;
   flex-direction: column;
   position: relative;
   background: #FFFFFF;
   border-radius: 16px;
+  max-width: 400px;
 }
 
 .card__container {
@@ -158,13 +158,22 @@
 }
 
 .category {
-  max-width: 110px;
+  max-width: 85px;
+}
+
+@media all and (max-width: 1310px) {
+  .card__field-text_saved-news {
+    max-width: 80px;
+  }
+}
+
+@media all and (max-width: 1205px) {
+  .card__field-text_saved-news {
+    max-width: initial;
+  }
 }
 
 @media all and (max-width: 1000px) {
-  .card {
-    width: 224px;
-  }
 
   .card__container {
     padding: 8px;
@@ -194,9 +203,6 @@
 }
 
 @media all and (max-width: 600px) {
-  .card {
-    width: 288px;
-  }
 
   .card__container {
     padding: 16px;

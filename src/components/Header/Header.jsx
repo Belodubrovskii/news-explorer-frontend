@@ -6,10 +6,14 @@ import menuBlack from '../../images/menu-black.svg';
 import closeBtn from '../../images/close.svg';
 import logout from '../../images/logout.svg';
 import logoutBlack from '../../images/logout-black.svg';
+import { CurrentUserContext } from '../../contexts/currentUserContext';
 
-function Header({ isBlackText, onRegister, loggedIn }) {
+function Header({
+  isBlackText, onRegister, loggedIn, onSignOut,
+}) {
   const isDark = isBlackText;
   const [isNavBarVisible, setNavBarVisible] = React.useState(false);
+  const currentUser = React.useContext(CurrentUserContext);
 
   function toggleNavBar() {
     setNavBarVisible(!isNavBarVisible);
@@ -31,6 +35,7 @@ function Header({ isBlackText, onRegister, loggedIn }) {
           >
             Главная
           </NavLink>
+          {loggedIn && (
           <NavLink
             to="/saved-news"
             className={`header__link ${isDark ? 'header__link_dark' : ''}`}
@@ -38,8 +43,9 @@ function Header({ isBlackText, onRegister, loggedIn }) {
           >
             Сохранённые статьи
           </NavLink>
-          <button onClick={onRegister} className={`header__button ${(isDark && !isNavBarVisible) ? 'header__button_dark' : ''}`} type="button">
-            <p className={`header__text ${(isDark && !isNavBarVisible) ? 'header__text_dark' : ''}`}>{loggedIn ? 'Грета' : 'Авторизоваться'}</p>
+          )}
+          <button onClick={loggedIn ? onSignOut : onRegister} className={`header__button ${(isDark && !isNavBarVisible) ? 'header__button_dark' : ''}`} type="button">
+            <p className={`header__text ${(isDark && !isNavBarVisible) ? 'header__text_dark' : ''}`}>{loggedIn ? currentUser : 'Авторизоваться'}</p>
             {loggedIn && <div className="header__img" style={{ backgroundImage: `url(${(isDark && !isNavBarVisible) ? logoutBlack : logout})` }} />}
           </button>
         </div>

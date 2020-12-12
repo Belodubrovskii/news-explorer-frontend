@@ -29,7 +29,7 @@
   color: #FFFFFF;
   text-align: left;
   max-width: 520px;
-  margin: 0 0 64px;
+  margin: 0 0 34px;
 }
 
 .search-form__input {
@@ -87,6 +87,20 @@
   width: 100%;
 }
 
+.search-form__error {
+  color: #FFFFFF;
+  align-self: center;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 10px;
+  visibility: hidden;
+}
+
+.search-form__error_visible {
+  visibility: visible;
+}
+
 @media all and (max-width: 768px) {
   .search-form {
     max-width: 450px;
@@ -101,7 +115,7 @@
   }
 
   .search-form__subtitle {
-    margin: 0 0 50px;
+    margin: 0 0 20px;
   }
 
   .search-form__input {
@@ -125,7 +139,7 @@
   }
 
   .search-form__subtitle {
-    margin: 0 0 120px;
+    margin: 0 0 90px;
   }
 
   .search-form__input {

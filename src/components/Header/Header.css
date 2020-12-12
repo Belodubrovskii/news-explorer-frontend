@@ -175,7 +175,7 @@
 
   .header__nav-bar {
     position: relative;
-    height: 230px;
+    height: initial;
     padding: 16px;
     box-sizing: border-box;
     flex-direction: column;
