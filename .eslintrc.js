@@ -21,5 +21,7 @@ module.exports = {
     'react/prop-types': 0,
     'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/control-has-associated-label': 0,
+    'no-underscore-dangle': ['off', { allow: ['foo_', '_bar'] }],
+    'no-console': ['off', { allow: ['warn', 'error'] }],
   },
 };

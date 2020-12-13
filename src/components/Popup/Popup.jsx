@@ -2,7 +2,7 @@ import React from 'react';
 import './Popup.css';
 
 function Popup({
-  isOpen, value, linkTo, title, hasForm, onClose, changePopup, children, onSubmit,
+  isOpen, value, linkTo, title, hasForm, onClose, changePopup, children, onSubmit, isDisabled,
 }) {
   // React.useEffect(() => {
 
@@ -24,15 +24,19 @@ function Popup({
   //     document.removeEventListener('keydown', closePopup);
   //   }
   // });
+  function handleSubmit(e) {
+    e.preventDefault();
+    onSubmit();
+  }
 
   return (
     <section className={`popup ${isOpen ? 'popup_opened' : ''}`}>
       {hasForm
         ? (
-          <form onSubmit={onSubmit} className="popup__wrapper popup__wrapper_form">
+          <form onSubmit={handleSubmit} className="popup__wrapper popup__wrapper_form">
             <h4 className="popup__title">{title}</h4>
             {children}
-            <input className="popup__submit-btn" type="submit" value={value} />
+            <input className="popup__submit-btn" type="submit" value={value} disabled={isDisabled} />
             <div className="popup__container">
               <p className="popup__text">или&nbsp;</p>
               <button onClick={changePopup} className="popup__link-btn" type="button">{linkTo}</button>
